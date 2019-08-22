@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ECS - A-Frame School</title>
+    <meta name="description" content="ECS - A-Frame School">
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@%5E3.2.x/dist/aframe-animation-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+        <!-- <video id="paris" autoplay loop="true" src="http://s3.amazonaws.com/hapyak_demos/css360/videos/paris360.mp4">
+        </a-assets>
+        <a-videosphere src="#paris"></a-videosphere> -->
+      <a-assets>
+        <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+        <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
+        <video id="webcam" playsinline></video>
+      </a-assets>
+      
+     <a-entity id="lightSphere" geometry="primitive: sphere;  radius: 0.8" material="shader: flat; src: #webcam;" light="type: directional; color: #FFF" position="-4 3 -4"
+               animation="property: position; to: 4 2.8 -4; dir: alternate; dur:4000; loop: true"
+               rotation="0 0 0" animation__2="property: rotation; to: 0 360 0 ; loop: true; dur: 5000">
+              </a-entity>
+
+      <a-entity geometry="primitive: box" material="color: red" position="0 0.5 -10" ></a-entity>
+      <a-entity geometry="primitive: box" material="color: orange" position="-2 0.5 -8"></a-entity>
+      <a-entity geometry="primitive: box" material="color: yellow" position="2 0.5 -8"></a-entity>
+      <a-entity geometry="primitive: box" material="color: green" position="-4 0.5 -6"></a-entity>
+      <a-entity geometry="primitive: box" material="color: blue" position="4 0.5 -6"></a-entity>
+
+      <a-entity id="sky" geometry="primitive: sphere; thetaLength: 90; radius: 30" material="side: back; height: 2048; width: 2048; src: #skyTexture; shader: flat"></a-entity>
+
+      <a-entity light="type: ambient; color: #222"></a-entity>
+      <a-entity light="type: directional; color: #111" position="-1 1 0"></a-entity>
+
+      <a-entity id="ground" geometry="primitive: plane; height: 100; width: 100"
+                material="src: #groundTexture" rotation="-90 0 0"></a-entity>
+
+      <a-entity id="text" text="value: Show us the light!; color: #BBB" 
+                position="2.5 2 -8" scale="8 8 8"></a-entity>
+    </a-scene>
+  </body>
+  <script>
+    // You can also set which camera to use (front/back/etc)
+    navigator.mediaDevices.getUserMedia({audio: false, video: true})
+  .then(stream => {
+    let $video = document.querySelector('video')
+    $video.srcObject = stream
+    $video.onloadedmetadata = () => {
+      $video.play()
+    }
+  })
+  </script>
+</html>

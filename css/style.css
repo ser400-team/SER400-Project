@@ -1,0 +1,82 @@
+/* 
+examples
+element i.e. body, div, option, a,
+.element_class
+#element_id
+#concatenate1 .concatenate2 
+*/
+
+
+.btn1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    font-size: 28px;
+    padding: 12px 24px;
+    text-align: center;
+    cursor: pointer;
+}
+.btn2 {
+    margin: 25px;
+    width:250px;
+    font-size: 28px;
+    padding: 12px 24px;
+    text-align: center;
+    cursor: pointer;
+}
+#flightpath{
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    font-size: 96px;
+    padding: 12px 24px;
+    text-align: center;
+    cursor: pointer;
+    color:white;
+    border-radius:15px;
+}
+.drop-list{
+    font-size:28px; 
+    height: 68px;"
+}
+
+html,
+body,
+#cesiumContainer {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+#toolbar {
+  background: rgba(189, 223, 195, 0.05);
+  padding: 4px;
+  border-radius: 4px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+#toolbar input {
+  vertical-align: middle;
+  padding-top: 2px;
+  padding-bottom: 2px;
+
+      }
+#toolbar .header {
+  font-weight: bold;
+}
+#cesiumContainer {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+body{
+  /* background-image: url("vid.mp4"); */
+  position:absolute;
+}
